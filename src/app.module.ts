@@ -8,7 +8,7 @@ import { ProductsModule } from './products/products.module';
   imports: [
     ProductsModule,
     MongooseModule.forRoot(
-      `mongodb+srv://andrii:root@cluster0.tmdcg.mongodb.net/products?retryWrites=true&w=majority`,
+      `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.tmdcg.mongodb.net/${process.env.DN_NAME}?retryWrites=true&w=majority`,
     ),
   ],
   controllers: [AppController],
